@@ -1,5 +1,5 @@
 .layers__items_5 {
-  background-image: url("/img/layer-5.png");
+  background-image: url("../../../../img/layer-5.png");
   transform: translateZ(300px) scale(0.9);
   pointer-events: none;
 }
