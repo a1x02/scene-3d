@@ -1,0 +1,15 @@
+.header__btn {
+  margin-top: calc(100vh / 10);
+  font-family: Inter, sans-serif;
+  color: white;
+  background-color: rgba(255,255,255,.1);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: calc(100vh / 90) calc(100vw / 80);
+  z-index: 2;
+}
+
+.header__btn:hover {
+  background-color: rgba(255,255,255,.4);
+  cursor: pointer;
+}
