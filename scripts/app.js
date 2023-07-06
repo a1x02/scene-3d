@@ -17,8 +17,8 @@ document.addEventListener('mousemove', (e) => {
             --move-y: ${(e.clientY - window.innerHeight / 2) * -.005}deg;
         `
     })
-    let rainAudioContext = new AudioContext()
-    rainAudioContext.decayTime = 0
+    // let rainAudioContext = new AudioContext()
+    // rainAudioContext.decayTime = 0
 })
 
 player.preload = "auto"
