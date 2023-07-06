@@ -2,13 +2,13 @@ const buttonFullScreen = document.querySelector('.header__btn')
 let playing = false
 let isFullscreen = false
 let player = new Audio()
-let songPlayer = new Audio() //
+let songPlayer = new Audio()
 let rainAudioContext = new AudioContext()
 rainAudioContext.decayTime = 0
-player.src = '/vendor/audio/rain.mp3'
+player.src = '../vendor/audio/rain.mp3'
 player.volume = 0.3
 
-songPlayer.src = '/vendor/audio/songs/pastel ghost - silhouette (slowed + muffled).mp3'
+songPlayer.src = '../vendor/audio/songs/pastel ghost - silhouette (slowed + muffled).mp3'
 
 
 
