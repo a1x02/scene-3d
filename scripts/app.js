@@ -1,4 +1,16 @@
 const buttonFullScreen = document.querySelector('.header__btn')
+let playing = false
+let isFullscreen = false
+let player = new Audio()
+let songPlayer = new Audio()
+let rainAudioContext = new AudioContext()
+rainAudioContext.decayTime = 0
+player.src = '/vendor/audio/rain.mp3'
+player.volume = 0.3
+
+songPlayer.src = '/vendor/audio/songs/pastel ghost - silhouette (slowed + muffled).mp3'
+
+
 
 document.addEventListener('mousemove', (e) => {
     Object.assign(document.documentElement, {
@@ -9,10 +21,32 @@ document.addEventListener('mousemove', (e) => {
     })
 })
 
+player.preload = "auto"
+songPlayer.preload = "auto"
+player.loop = true
+
+
+// player.addEventListener('ended', () => {
+//     playing = false
+// })
+
 buttonFullScreen.addEventListener('click', () => {
     const bodyElement = document.body
-    let req = bodyElement.requestFullscreen()
-        if (req) {
-            req.call(bodyElement)
-        }
+
+    if (isFullscreen && document.fullscreenElement) {
+        document.exitFullscreen().then(r => console.log('Fullscreen closed'))
+        buttonFullScreen.textContent = 'Погрузиться в атмосферу'
+    } else {
+        bodyElement.requestFullscreen().then(r => console.log('Now we are fullscreen'))
+        buttonFullScreen.textContent = 'Вернуться в реальный мир'
+    }
+    isFullscreen = !isFullscreen
+    if (playing) {
+        player.pause()
+        songPlayer.pause()
+    } else {
+        player.play().then(r => console.log('play'))
+        songPlayer.play().then(r => console.log('play'))
+    }
+    playing = !playing
 })
