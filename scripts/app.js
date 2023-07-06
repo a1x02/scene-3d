@@ -3,8 +3,6 @@ let playing = false
 let isFullscreen = false
 let player = new Audio()
 let songPlayer = new Audio()
-let rainAudioContext = new AudioContext()
-rainAudioContext.decayTime = 0
 player.src = '../scripts/audio/rain.mp3'
 player.volume = 0.3
 
@@ -19,6 +17,8 @@ document.addEventListener('mousemove', (e) => {
             --move-y: ${(e.clientY - window.innerHeight / 2) * -.005}deg;
         `
     })
+    let rainAudioContext = new AudioContext()
+    rainAudioContext.decayTime = 0
 })
 
 player.preload = "auto"
