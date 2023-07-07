@@ -6,7 +6,7 @@ let songPlayer = new Audio()
 player.src = '../scripts/audio/rain.mp3'
 player.volume = 0.3
 
-songPlayer.src = '../scripts/audio/songs/pastel ghost - silhouette (slowed + muffled).mp3'
+songPlayer.src = '../scripts/audio/songs/pastelghost-silhouette(slowed+muffled).mp3'
 
 
 
